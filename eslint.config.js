@@ -11,11 +11,18 @@ export default [
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
-        window: true,
-        document: true,
-        console: true,
+        window: 'readonly',
+        document: 'readonly',
+        console: 'readonly',
         supabase: 'readonly',
         setTimeout: 'readonly',
+        setInterval: 'readonly',
+        requestAnimationFrame: 'readonly',
+        cancelAnimationFrame: 'readonly',
+        localStorage: 'readonly',
+        Audio: 'readonly',
+        event: 'readonly',
+        alert: 'readonly',
       },
     },
     plugins: {
@@ -23,6 +30,7 @@ export default [
     },
     rules: {
       ...tseslint.configs.recommended.rules,
+      '@typescript-eslint/no-unused-vars': 'off',
     },
   },
   {

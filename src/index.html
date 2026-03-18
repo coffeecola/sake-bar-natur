@@ -3,73 +3,400 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sake Bar Natur - 90's Style</title>
+    <title>~*~ Sake Bar Natur ~*~ 90's Forever</title>
+    <meta
+      name="description"
+      content="The ultimate 90s sake bar experience on the web!"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Hidden Konami Code Message -->
+    <div class="secret-message" id="secret-message">
+      <h1 style="color: #ff00ff">🎉 YOU FOUND THE SECRET! 🎉</h1>
+      <p style="color: #00ff00">You're a true 90s kid!</p>
+      <p style="color: #ffff00">🍶 Sake is life 🍶</p>
+      <button
+        onclick="
+          document.getElementById('secret-message').classList.remove('show')
+        "
+        style="margin-top: 1rem"
+      >
+        Close
+      </button>
+    </div>
+
     <header>
+      <div class="marquee-container">
+        <marquee
+          behavior="scroll"
+          direction="left"
+          scrollamount="8"
+          class="marquee"
+        >
+          ★★★ Welcome to Sake Bar Natur - The Ultimate 90's Experience! 🍶✨ ★★★
+          Best viewed in Netscape Navigator 4.0 at 800x600 ★★★ You are visitor
+          #000001 ★★★
+        </marquee>
+      </div>
       <marquee
         behavior="scroll"
-        direction="left"
+        direction="right"
         scrollamount="5"
-        class="marquee"
+        class="marquee-2"
       >
-        Welcome to Sake Bar Natur - The Ultimate 90's Experience! 🍶✨
+        ~*~ Free Sake Fridays ~*~ Karaoke Nights ~*~ Retro Vibes ~*~
       </marquee>
       <nav id="sticky-nav">
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#voting">Vote for Sake</a></li>
-          <li><a href="#messages">Message Board</a></li>
+          <li><a href="#home">🏠 Home</a></li>
+          <li><a href="#menu">🍶 Menu</a></li>
+          <li><a href="#music">🎵 Music</a></li>
+          <li><a href="#voting">📊 Vote</a></li>
+          <li><a href="#poll">❓ Poll</a></li>
+          <li><a href="#messages">✎ Guestbook</a></li>
+          <li><a href="#links">🔗 Links</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
+      <!-- HOME SECTION -->
       <section id="home">
-        <h1 class="rainbow">Welcome to Sake Bar Natur</h1>
+        <h1 class="rainbow glitch">~*~ Sake Bar Natur ~*~</h1>
+        <p class="welcome-text">★ Where the 90s Never Died! ★</p>
+
+        <div class="ascii-art">
+          ███████╗███╗ ██╗██████╗ ███████╗██╗ █████╗ ██████╗ ███████╗
+          ██╔════╝████╗ ██║██╔══██╗██╔════╝██║ ██╔══██╗██╔══██╗██╔════╝
+          ███████╗██╔██╗ ██║██████╔╝█████╗ ██║ ███████║██████╔╝█████╗
+          ╚════██║██║╚██╗██║██╔══██╗██╔══╝ ██║ ██╔══██║██╔══██╗██╔══╝
+          ███████║██║ ╚████║██████╔╝██║ ███████╗██║ ██║██║ ██║███████╗
+          ╚══════╝╚═╝ ╚═══╝╚═════╝ ╚═╝ ╚══════╝╚═╝ ╚═╝╚═╝ ╚═╝╚══════╝ ██████╗
+          ███████╗███╗ ██╗ ██████╗ ███╗ ██╗███████╗ ██╔══██╗██╔════╝████╗
+          ██║██╔═══██╗████╗ ██║██╔════╝ ██████╔╝█████╗ ██╔██╗ ██║██║ ██║██╔██╗
+          ██║███████╗ ██╔══██╗██╔══╝ ██║╚██╗██║██║ ██║██║╚██╗██║╚════██║ ██║
+          ██║███████╗██║ ╚████║╚██████╔╝██║ ╚████║███████║ ╚═╝ ╚═╝╚══════╝╚═╝
+          ╚═══╝ ╚═════╝ ╚═╝ ╚═══╝╚══════╝
+        </div>
+
+        <div class="under-construction">
+          <span>🚧 UNDER CONSTRUCTION 🚧</span>
+          <p>More cool stuff coming soon! Check back later!</p>
+        </div>
+
+        <p style="color: #00ffff; margin-top: 2rem">
+          <strong>📍 Location:</strong> Somewhere in cyberspace<br />
+          <strong>🕐 Hours:</strong> Always Open on the Web<br />
+          <strong>📧 Email:</strong>
+          <a href="mailto:sake@natur.bar" style="color: #ff00ff"
+            >sake@natur.bar</a
+          >
+        </p>
+
+        <div
+          class="scroll-hint"
+          onclick="
+            document
+              .getElementById('menu')
+              .scrollIntoView({ behavior: 'smooth' })
+          "
+        >
+          ▼ SCROLL DOWN ▼
+        </div>
       </section>
 
+      <!-- MENU SECTION -->
       <section id="menu">
-        <h2>Our Menu</h2>
+        <h2 class="rainbow">🍶 Our Menu 🍶</h2>
+        <p style="text-align: center; color: #00ffff">
+          ~ Premium Sake Selection ~
+        </p>
+
         <div class="menu-items">
           <div class="menu-item">
+            <span class="new-badge">NEW!</span>
             <h3>Junmai Sake</h3>
-            <p>Pure rice sake, smooth and elegant.</p>
+            <p>
+              Pure rice sake, smooth and elegant. A classic choice for purists.
+            </p>
             <span class="price">$12</span>
           </div>
           <div class="menu-item">
             <h3>Ginjo Sake</h3>
-            <p>Premium sake with fruity notes.</p>
+            <p>Premium sake with fruity notes. Refined and sophisticated.</p>
             <span class="price">$15</span>
           </div>
-          <!-- Add more items -->
+          <div class="menu-item">
+            <span class="new-badge">HOT!</span>
+            <h3>Daiginjo Sake</h3>
+            <p>Ultra-premium luxury sake. The finest money can buy.</p>
+            <span class="price">$25</span>
+          </div>
+          <div class="menu-item">
+            <h3>Nigori Sake</h3>
+            <p>Cloudy, unfiltered sake. Sweet and creamy texture.</p>
+            <span class="price">$14</span>
+          </div>
+          <div class="menu-item">
+            <h3>Junmai Dry</h3>
+            <p>Clean and crisp. Perfect with sushi and sashimi.</p>
+            <span class="price">$13</span>
+          </div>
+          <div class="menu-item">
+            <span class="new-badge">LIMITED!</span>
+            <h3>Sparkling Sake</h3>
+            <p>Effervescent and refreshing. A modern twist on tradition.</p>
+            <span class="price">$18</span>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem">
+          <p style="color: #ffff00">
+            <em>~ All sake served warm or chilled ~</em><br />
+            <em>~ Ask about our sake flight specials ~</em>
+          </p>
         </div>
       </section>
 
+      <!-- MUSIC SECTION - WINAMP PLAYER -->
+      <section id="music">
+        <h2 class="rainbow">🎵 Sake Bar Jukebox 🎵</h2>
+        <p style="text-align: center; color: #00ffff">
+          ~ Winamp Style Music Player ~
+        </p>
+
+        <div class="winamp-player">
+          <div class="winamp-title">
+            <span>🎵 WINAMP</span>
+            <span style="font-size: 0.7rem">v0.90s</span>
+          </div>
+
+          <div class="winamp-display">
+            <div class="track-info" id="track-info">Loading...</div>
+            <div class="visualizer" id="visualizer">
+              <!-- Visualizer bars will be added by JS -->
+            </div>
+          </div>
+
+          <div class="winamp-controls">
+            <button onclick="player.prev()" title="Previous">⏮ PREV</button>
+            <button onclick="player.play()" title="Play">▶ PLAY</button>
+            <button onclick="player.pause()" title="Pause">⏸ PAUSE</button>
+            <button onclick="player.stop()" title="Stop">⏹ STOP</button>
+            <button onclick="player.next()" title="Next">NEXT ⏭</button>
+            <button
+              onclick="player.toggleShuffle()"
+              id="shuffle-btn"
+              title="Shuffle"
+            >
+              🔀
+            </button>
+            <button
+              onclick="player.toggleRepeat()"
+              id="repeat-btn"
+              title="Repeat"
+            >
+              🔁
+            </button>
+          </div>
+
+          <div class="playlist" id="playlist">
+            <!-- Playlist items will be added by JS -->
+          </div>
+
+          <div style="text-align: center; margin-top: 10px">
+            <input
+              type="range"
+              id="volume"
+              min="0"
+              max="100"
+              value="70"
+              onchange="player.setVolume(this.value)"
+              style="width: 200px; accent-color: #00ff00"
+            />
+            <span style="color: #00ff00; font-size: 0.8rem"
+              >Volume: <span id="volume-display">70</span>%</span
+            >
+          </div>
+        </div>
+
+        <div class="under-construction" style="margin-top: 2rem">
+          <span>🎤 KARAOKE NIGHTS 🎤</span>
+          <p>Every Friday & Saturday - Sign up at the bar!</p>
+        </div>
+      </section>
+
+      <!-- VOTING SECTION -->
       <section id="voting">
-        <h2>Vote for Next Sake Import</h2>
+        <h2 class="rainbow">📊 Vote for Next Sake Import 📊</h2>
+        <p style="text-align: center; color: #00ffff">~ Your vote matters! ~</p>
+
         <div id="voting-board">
           <!-- Voting options will be loaded here -->
+          <div class="under-construction">
+            <span>🔃 LOADING 🔃</span>
+            <p>Connecting to the database...</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem">
+          <p style="color: #ffff00">
+            Don't see your favorite sake?<br />
+            <a href="#messages" style="color: #00ffff"
+              >Leave a suggestion in the guestbook!</a
+            >
+          </p>
         </div>
       </section>
 
+      <!-- POLL SECTION -->
+      <section id="poll">
+        <h2 class="rainbow">❓ Quick Poll ❓</h2>
+
+        <div class="poll-container">
+          <p class="poll-question">🍶 Are you a sake lover? 🍶</p>
+          <div class="poll-options">
+            <div class="poll-option" onclick="votePoll('yes')">
+              <div class="poll-bar" id="poll-bar-yes" style="width: 0%"></div>
+              <span>YES! 🍶 <span id="poll-yes">0</span>%</span>
+            </div>
+            <div class="poll-option" onclick="votePoll('no')">
+              <div class="poll-bar" id="poll-bar-no" style="width: 0%"></div>
+              <span>Not yet... <span id="poll-no">0</span>%</span>
+            </div>
+            <div class="poll-option" onclick="votePoll('maybe')">
+              <div class="poll-bar" id="poll-bar-maybe" style="width: 0%"></div>
+              <span>Maybe? 🤔 <span id="poll-maybe">0</span>%</span>
+            </div>
+          </div>
+          <p style="color: #00ffff; margin-top: 1rem; font-size: 0.9rem">
+            Total votes: <span id="poll-total">0</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- MESSAGE BOARD / GUESTBOOK SECTION -->
       <section id="messages">
-        <h2>Message Board</h2>
+        <h2 class="rainbow">✎ Sign Our Guestbook ✎</h2>
+        <p style="text-align: center; color: #00ffff">
+          ~ Leave a message for future visitors! ~
+        </p>
+
         <div id="message-board">
           <!-- Messages will be displayed here -->
+          <div class="under-construction">
+            <span>🔃 LOADING 🔃</span>
+            <p>Fetching messages from the void...</p>
+          </div>
         </div>
+
         <form id="message-form">
-          <input type="text" id="name" placeholder="Your Name" required />
-          <textarea id="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Post Message</button>
+          <label style="color: #00ff00; font-weight: bold"
+            >Your Name / Nickname:</label
+          >
+          <input
+            type="text"
+            id="name"
+            placeholder="Cool90sKid"
+            required
+            maxlength="50"
+          />
+
+          <label style="color: #00ff00; font-weight: bold">Your Message:</label>
+          <textarea
+            id="message"
+            placeholder="Share your thoughts, sake recommendations, or just say hi!"
+            required
+            maxlength="500"
+          ></textarea>
+
+          <button type="submit">✎ Sign Guestbook</button>
         </form>
+      </section>
+
+      <!-- LINKS / WEBRING SECTION -->
+      <section id="links">
+        <h2 class="rainbow">🔗 Cool Links & Webring 🔗</h2>
+
+        <div class="webring">
+          <h3>~*~ 90s Web Ring ~*~</h3>
+          <p style="color: #00ffff">Join the nostalgia trip!</p>
+          <div class="webring-links">
+            <a
+              href="#"
+              onclick="
+                alert('This would go to the previous site in the webring!')
+              "
+              >◀ Previous</a
+            >
+            <a href="#" onclick="alert('This would go to a random 90s site!')"
+              >🎲 Random</a
+            >
+            <a
+              href="#"
+              onclick="alert('This would go to the next site in the webring!')"
+              >Next ▶</a
+            >
+            <a href="#" onclick="alert('This would go to the webring hub!')"
+              >Join Ring</a
+            >
+          </div>
+        </div>
+
+        <div class="cool-links">
+          <h3 style="color: #00ffff">~ Cool Friends ~</h3>
+          <a href="https://archive.org" target="_blank">📚 Internet Archive</a
+          ><br />
+          <a href="https://neocities.org" target="_blank">🌐 Neocities</a><br />
+          <a href="https://winamp.com" target="_blank">🎵 Winamp</a><br />
+          <a href="https://supabase.com" target="_blank">💾 Supabase</a>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem">
+          <p style="color: #ffff00">
+            Want to be listed here?<br />
+            <a href="#messages" style="color: #00ffff"
+              >Leave a message with your link!</a
+            >
+          </p>
+        </div>
       </section>
     </main>
 
+    <!-- FOOTER -->
+    <footer>
+      <div class="hit-counter" id="hit-counter">000001</div>
+      <p style="color: #00ff00">You are visitor number</p>
+
+      <div class="footer-badges">
+        <span class="badge">🌐 Made with HTML & CSS</span>
+        <span class="badge">🎨 100% Art School Approved</span>
+        <span class="badge">🍶 Sake Powered</span>
+        <span class="badge">📀 Best viewed with Winamp</span>
+      </div>
+
+      <p style="color: #00ffff; margin-top: 1rem; font-size: 0.8rem">
+        © 1999-2024 Sake Bar Natur | All Rights Reserved<br />
+        <em>"The web is our playground"</em>
+      </p>
+
+      <p style="color: #ff00ff; font-size: 0.7rem; margin-top: 1rem">
+        [
+        <a
+          href="#"
+          onclick="alert('Thanks for visiting! Come back soon!')"
+          style="color: #ffff00"
+          >Email Webmaster</a
+        >
+        ] [ <a href="#home" style="color: #ffff00">Back to Top</a> ]
+      </p>
+    </footer>
+
+    <!-- Background Elements -->
     <div id="stars"></div>
 
+    <!-- Supabase & App Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
   </body>
