@@ -15,6 +15,7 @@ export default [
         document: true,
         console: true,
         supabase: 'readonly',
+        setTimeout: 'readonly',
       },
     },
     plugins: {

@@ -8,6 +8,14 @@
   </head>
   <body>
     <header>
+      <marquee
+        behavior="scroll"
+        direction="left"
+        scrollamount="5"
+        class="marquee"
+      >
+        Welcome to Sake Bar Natur - The Ultimate 90's Experience! 🍶✨
+      </marquee>
       <nav id="sticky-nav">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -20,8 +28,7 @@
 
     <main>
       <section id="home">
-        <h1>Welcome to Sake Bar Natur</h1>
-        <p>Experience the best sake in a retro 90's atmosphere.</p>
+        <h1 class="rainbow">Welcome to Sake Bar Natur</h1>
       </section>
 
       <section id="menu">
@@ -60,6 +67,8 @@
         </form>
       </section>
     </main>
+
+    <div id="stars"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>

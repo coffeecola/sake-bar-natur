@@ -1,5 +1,38 @@
 // script.js - 90's Sake Bar Website
 
+// Cursor trail effect
+const trail = [];
+for (let i = 0; i < 20; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'cursor-trail';
+  document.body.appendChild(dot);
+  trail.push(dot);
+}
+
+document.addEventListener('mousemove', (e) => {
+  trail.forEach((dot, index) => {
+    setTimeout(() => {
+      dot.style.left = e.pageX + 'px';
+      dot.style.top = e.pageY + 'px';
+    }, index * 50);
+  });
+});
+
+// Animated stars background
+function createStars() {
+  const starsContainer = document.getElementById('stars');
+  for (let i = 0; i < 50; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.width = Math.random() * 3 + 1 + 'px';
+    star.style.height = star.style.width;
+    star.style.animationDelay = Math.random() * 2 + 's';
+    starsContainer.appendChild(star);
+  }
+}
+
 // Supabase setup
 const SUPABASE_URL = 'https://ufuiyaciaapslhaatshp.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_C_xH30NDNF3HVWITXc3buw_KBOoCKHs';
@@ -118,5 +151,6 @@ document
   });
 
 // Initialize
+createStars();
 loadVotingOptions();
 loadMessages();
