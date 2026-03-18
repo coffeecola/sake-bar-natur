@@ -14,6 +14,14 @@ header {
   border-bottom: 2px solid #0f0;
 }
 
+.marquee {
+  color: #ff0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff0;
+  margin-bottom: 1rem;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -63,6 +71,40 @@ h2 {
   text-align: center;
   text-shadow: 0 0 10px #0f0;
   animation: blink 2s infinite;
+}
+
+.rainbow {
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff8000,
+    #ffff00,
+    #80ff00,
+    #00ff00,
+    #00ff80,
+    #00ffff,
+    #0080ff,
+    #0000ff,
+    #8000ff,
+    #ff00ff,
+    #ff0080
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 3s ease-in-out infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes blink {
@@ -130,4 +172,50 @@ button {
 button:hover {
   background: #0f0;
   color: #000;
+}
+
+.cursor-trail {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #0f0;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: fade 1s linear infinite;
+}
+
+@keyframes fade {
+  to {
+    opacity: 0;
+  }
+}
+
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
