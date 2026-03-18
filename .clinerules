@@ -1,0 +1,260 @@
+# Cline Rules: Sake Bar – 90s Aesthetic Static Website
+
+## 🍶 Project Identity
+This is a static HTML/CSS/JS website for a sake bar with a bold 90s internet aesthetic.
+Think: GeoCities, early web artsy chaos, GIF animations, neon colors, pixel fonts,
+tiled backgrounds, marquee text, and low-fi charm. The vibe is intentionally retro,
+playful, and maximalist — NOT clean, minimal, or modern.
+
+**Motto:** "JavaScript is for lovers" 💖
+
+---
+
+## ⚡ Tech Stack (STRICT)
+- **Pure HTML5, CSS3, vanilla JavaScript ONLY**
+- **NO frameworks** — No React, Vue, Tailwind, Bootstrap, Svelte, Angular — ever
+- **NO npm packages** for frontend code — no bundlers, no build tools
+- **NO CSS preprocessors** — raw CSS only
+- All assets are local or hotlinked GIFs/images
+- Fonts: Google Fonts or @font-face (pixel/retro fonts preferred)
+- Build tool: Vite (for dev server only, no bundling of JS)
+
+---
+
+## 🎨 Visual & Design Rules
+
+### Embrace 90s Web Conventions
+- ✅ Tiled/repeating backgrounds
+- ✅ Blinking/flashing text (`<blink>` or CSS animation)
+- ✅ Marquee scrollers (`<marquee>` tag encouraged)
+- ✅ Animated GIFs everywhere (under construction, spinning skulls, flames, etc.)
+- ✅ Comic-Sans-adjacent fonts, pixel fonts, Impact, Courier
+- ✅ Neon/acid color palettes
+- ✅ Cursor effects (sparkle trails, custom cursors, colored dots)
+- ✅ Hit counters, guestbooks, webrings
+- ✅ "Under Construction" signs
+- ✅ Guestbook and visitor counters
+
+### Color Palette
+- Neons: `#00ff00`, `#ff00ff`, `#00ffff`, `#ffff00`, `#ff0000`
+- Deep blacks: `#000000`, `#0a0a0a`
+- Purples: `#6600cc`, `#9900ff`
+- Hot pinks: `#ff0066`, `#ff1493`
+- Electric blues: `#0066ff`, `#00ccff`
+- Lime greens: `#32cd32`, `#7fff00`
+
+### Layout & Structure
+- Decorative GIF dividers, star rows (★★★), pixel art borders
+- Table-based or float-based layouts encouraged for retro authenticity
+- Flexbox/Grid ONLY when absolutely necessary for specific effects
+- NO CSS variables — keep styles raw and specific
+- NO modern CSS resets — use inline resets or specific overrides
+
+### DO NOT
+- ❌ Use flexbox or grid as primary layout
+- ❌ Use CSS variables (`--custom-property`)
+- ❌ Use modern CSS resets (normalize.css, etc.)
+- ❌ Make things "clean" or "minimal" — embrace the chaos
+- ❌ Use smooth gradients or subtle shadows (unless ironic)
+- ❌ Use border-radius extensively (90s was boxy)
+
+---
+
+## ✍️ Content & Copy Rules
+
+### Tone & Voice
+- Playful, underground, a little nerdy about sake
+- Anti-corporate, pro-chaos
+- Japanese words/phrases welcome (with context)
+- Bilingual-friendly (EN/JP)
+
+### Content Focus
+- Sake varieties, brewing methods, serving styles
+- Japanese drinking culture and traditions
+- Atmosphere, events, community
+- Music (90s/2000s vibes, electronic, city pop)
+
+### FORBIDDEN Language
+- ❌ "Premium experience"
+- ❌ "Crafted with care"
+- ❌ "Artisanal"
+- ❌ "Curated"
+- ❌ "Elevate your palate"
+- ❌ Corporate marketing speak of any kind
+
+---
+
+## 📐 HTML/CSS Conventions
+
+### HTML Structure
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sake Bar Natur</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Content -->
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+### Class Naming
+- lowercase-hyphenated: `.neon-title`, `.gif-border`, `.cursor-trail`
+- Be descriptive but fun: `.blink-fast`, `.marquee-chaos`, `.pixel-star`
+
+### Section Comments
+```html
+<!-- === SECTION: HERO === -->
+<!-- === SECTION: MUSIC PLAYER === -->
+<!-- === SECTION: GUESTBOOK === -->
+```
+
+### Inline Styles
+- ✅ Acceptable for one-off retro flourishes
+- ✅ Use for dynamic JS-generated effects
+- ✅ Embrace the `<div style="...">` energy
+
+### GIF Embeds
+```html
+<img src="assets/spinner.gif" alt="Loading spinner animation" width="32" height="32">
+```
+
+---
+
+##  JavaScript Rules
+
+### Vanilla JS Only
+- ❌ No jQuery
+- ❌ No libraries unless explicitly approved
+- ❌ No ES modules — use classic `<script>` tags
+- ❌ Avoid localStorage/cookies unless needed for a feature
+
+### File Organization
+- JS files in `/src/` folder (root level)
+- One concern per file if splitting up
+- Keep functions small and named descriptively
+- Use global functions for event handlers (onclick, etc.)
+
+### Code Style
+```javascript
+// ✅ Good
+function createStars() {
+  // Create starfield effect
+}
+
+// ✅ Good for event handlers
+window.vote = function(id) {
+  // Handle vote
+};
+
+// ❌ Avoid arrow functions for top-level declarations
+// ❌ Avoid async/await when callbacks work fine
+```
+
+### Browser Globals
+- Use `window`, `document`, `localStorage`, `Audio` freely
+- ESLint is configured to allow these
+
+---
+
+## 📁 File Structure
+
+```
+sake-bar-natur/
+├── src/
+│   ├── index.html          # Main HTML file
+│   ├── styles.css          # All styles in one file (90s style)
+│   └── script.js           # All JS in one file
+├── public/
+│   ├── assets/             # Images, GIFs
+│   ├── music/              # MP3 files for player
+│   └── fonts/              # Custom fonts (optional)
+├── .clinerules             # This file
+├── netlify.toml            # Netlify deploy config
+├── package.json            # Dev dependencies only (Vite)
+└── README.md               # Project overview
+```
+
+---
+
+## 🛠️ Cline Behavior Expectations
+
+### When I Ask For Changes
+1. **Read the file first** — Always check current state before editing
+2. **Make targeted edits** — Use replace_in_file for small changes
+3. **Test visually** — Suggest checking the browser after changes
+4. **Commit often** — Small, descriptive commits
+5. **Push to feature branch** — Never push directly to main
+
+### Commit Message Format
+```
+feat: add winamp music player
+fix: correct cursor trail color
+style: update neon palette
+chore: add music directory
+```
+
+### When Something Breaks
+1. Check the browser console for errors
+2. Verify file paths are correct
+3. Test in dev server before committing
+4. Keep a backup of working state
+
+---
+
+## 🎯 Feature Ideas (Backlog)
+
+- [ ] MIDI file player
+- [ ] More easter eggs (konami code done ✓)
+- [ ] Additional cursor effects
+- [ ] More animated GIF decorations
+- [ ] "Best viewed in Netscape" badge
+- [ ] Visitor IP-based counter (with Supabase)
+- [ ] More guestbook features
+- [ ] Email form for contact
+- [ ] Event calendar with <table> layout
+- [ ] Sake recommendation quiz
+
+---
+
+## 🔗 Inspiration References
+
+- GeoCities archived sites
+- The Web Design Museum (webdesignmuseum.org)
+- retro nintendo website
+- 90s anime fan sites
+- Early Japanese corporate websites
+- Winamp skins
+- AOL Instant Messenger profiles
+- Neopets and Petz aesthetics
+
+---
+
+## 📞 Quick Commands
+
+```bash
+# Start dev server
+pnpm run dev
+
+# Build for production (if needed)
+pnpm run build
+
+# Preview production build
+pnpm run preview
+
+# Git workflow
+git add -A
+git commit -m "feat: description"
+git push origin feature/branch-name
+```
+
+---
+
+**Remember:** If it feels too polished, you're doing it wrong.
+Embrace the chaos. Break the rules. Make it 90s. 🌟
