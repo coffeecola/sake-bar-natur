@@ -1,5 +1,10 @@
 // script.js - 90's Sake Bar Website
 
+// Supabase setup
+const SUPABASE_URL = 'https://ufuiyaciaapslhaatshp.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_C_xH30NDNF3HVWITXc3buw_KBOoCKHs';
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 // Sticky navigation
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('sticky-nav');
@@ -21,12 +26,18 @@ document.querySelectorAll('nav a').forEach((anchor) => {
   });
 });
 
-// Voting board - mock data for now
-const votingOptions = [
-  { id: 1, name: 'Yamada Sake', votes: 5 },
-  { id: 2, name: 'Sakura Ginjo', votes: 3 },
-  { id: 3, name: 'Mountain Dew Sake', votes: 7 },
-];
+// Voting board
+let votingOptions = [];
+
+async function loadVotingOptions() {
+  const { data, error } = await supabaseClient.from('sake_votes').select('*');
+  if (error) {
+    console.error('Error loading votes:', error);
+    return;
+  }
+  votingOptions = data;
+  renderVotingBoard();
+}
 
 function renderVotingBoard() {
   const board = document.getElementById('voting-board');
@@ -44,18 +55,36 @@ function renderVotingBoard() {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-function vote(id) {
+async function vote(id) {
   const option = votingOptions.find((o) => o.id === id);
   if (option) {
-    option.votes++;
-    renderVotingBoard();
+    const { error } = await supabaseClient
+      .from('sake_votes')
+      .update({ votes: option.votes + 1 })
+      .eq('id', id);
+    if (error) {
+      console.error('Error voting:', error);
+      return;
+    }
+    await loadVotingOptions(); // Reload to show updated votes
   }
 }
 
-// Message board - mock data
-let messages = [
-  { name: 'Anon', message: 'Great sake selection!', date: new Date() },
-];
+// Message board
+let messages = [];
+
+async function loadMessages() {
+  const { data, error } = await supabaseClient
+    .from('messages')
+    .select('*')
+    .order('created_at', { ascending: false });
+  if (error) {
+    console.error('Error loading messages:', error);
+    return;
+  }
+  messages = data;
+  renderMessageBoard();
+}
 
 function renderMessageBoard() {
   const board = document.getElementById('message-board');
@@ -64,22 +93,30 @@ function renderMessageBoard() {
       (msg) => `
     <div class="message">
       <strong>${msg.name}</strong>: ${msg.message}
-      <small>${msg.date.toLocaleString()}</small>
+      <small>${new Date(msg.created_at).toLocaleString()}</small>
     </div>
   `
     )
     .join('');
 }
 
-document.getElementById('message-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.getElementById('name').value;
-  const message = document.getElementById('message').value;
-  messages.push({ name, message, date: new Date() });
-  renderMessageBoard();
-  e.target.reset();
-});
+document
+  .getElementById('message-form')
+  .addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+    const { error } = await supabaseClient
+      .from('messages')
+      .insert([{ name, message }]);
+    if (error) {
+      console.error('Error posting message:', error);
+      return;
+    }
+    await loadMessages(); // Reload messages
+    e.target.reset();
+  });
 
 // Initialize
-renderVotingBoard();
-renderMessageBoard();
+loadVotingOptions();
+loadMessages();

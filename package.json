@@ -40,5 +40,8 @@
     "lint-staged": "^16.4.0",
     "live-server": "^1.2.2",
     "prettier": "^3.8.1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.99.2"
   }
 }
