@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sake Bar Natur - 90's Style</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="sticky-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#voting">Vote for Sake</a></li>
+          <li><a href="#messages">Message Board</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <h1>Welcome to Sake Bar Natur</h1>
+        <p>Experience the best sake in a retro 90's atmosphere.</p>
+      </section>
+
+      <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+          <div class="menu-item">
+            <h3>Junmai Sake</h3>
+            <p>Pure rice sake, smooth and elegant.</p>
+            <span class="price">$12</span>
+          </div>
+          <div class="menu-item">
+            <h3>Ginjo Sake</h3>
+            <p>Premium sake with fruity notes.</p>
+            <span class="price">$15</span>
+          </div>
+          <!-- Add more items -->
+        </div>
+      </section>
+
+      <section id="voting">
+        <h2>Vote for Next Sake Import</h2>
+        <div id="voting-board">
+          <!-- Voting options will be loaded here -->
+        </div>
+      </section>
+
+      <section id="messages">
+        <h2>Message Board</h2>
+        <div id="message-board">
+          <!-- Messages will be displayed here -->
+        </div>
+        <form id="message-form">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <textarea id="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Post Message</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

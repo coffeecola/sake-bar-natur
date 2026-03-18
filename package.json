@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "90's style sake bar website",
   "main": "src/index.html",
+  "type": "module",
   "scripts": {
     "dev": "live-server src --port=3000",
     "lint": "eslint src --ext .js,.ts",
