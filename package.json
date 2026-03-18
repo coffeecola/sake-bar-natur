@@ -1,0 +1,43 @@
+{
+  "name": "sake-bar-natur",
+  "version": "1.0.0",
+  "description": "90's style sake bar website",
+  "main": "src/index.html",
+  "scripts": {
+    "dev": "live-server src --port=3000",
+    "lint": "eslint src --ext .js,.ts",
+    "lint:fix": "eslint src --ext .js,.ts --fix",
+    "format": "prettier --write src/**/*.{js,ts,css,html}",
+    "build": "echo 'No build step for vanilla project'",
+    "test": "echo \"No tests yet\" && exit 0",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "sake",
+    "bar",
+    "90s",
+    "website"
+  ],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.32.1",
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,html}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "eslint": "^10.0.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.8.1"
+  }
+}
