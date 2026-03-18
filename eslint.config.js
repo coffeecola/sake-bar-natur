@@ -14,6 +14,7 @@ export default [
         window: true,
         document: true,
         console: true,
+        supabase: 'readonly',
       },
     },
     plugins: {

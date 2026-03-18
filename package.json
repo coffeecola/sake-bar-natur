@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "90's style sake bar website",
   "main": "src/index.html",
+  "type": "module",
   "scripts": {
     "dev": "live-server src --port=3000",
     "lint": "eslint src --ext .js,.ts",
@@ -39,5 +40,8 @@
     "lint-staged": "^16.4.0",
     "live-server": "^1.2.2",
     "prettier": "^3.8.1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.99.2"
   }
 }
