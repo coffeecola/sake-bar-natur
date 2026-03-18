@@ -1,0 +1,10 @@
+# Netlify Configuration for Sake Bar Natur
+# "Best viewed in Netscape Navigator 4.0 at 800x600"
+
+[build]
+  publish = "src"
+  command = "echo 'No build step needed - static site'"
+
+[dev]
+  port = 3000
+  autoLaunch = true
